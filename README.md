@@ -1,6 +1,8 @@
 # Single-cell RNA-seq analysis using Seurat (PBMC dataset)
 
-This repository presents an end-to-end single-cell RNA-seq (scRNA-seq) analysis workflow using the Seurat package in R. The analysis was performed on a PBMC dataset to identify immune cell populations, characterize marker genes, and interpret biological functions through enrichment analysis.
+This repository presents an end-to-end single-cell RNA-seq (scRNA-seq) analysis of a PBMC dataset using Seurat. The workflow is designed to identify immune cell populations, characterize marker genes, and derive biological insights through differential expression and functional enrichment analysis.
+
+The analysis demonstrates clear separation of major immune cell types and highlights key transcriptomic signatures underlying adaptive and innate immune responses.
 
 ## Project overview
 
