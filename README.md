@@ -1,85 +1,61 @@
 # Single-cell RNA-seq analysis using Seurat (PBMC dataset)
 
-This repository contains an end-to-end single-cell RNA-seq analysis workflow using the Seurat package in R on a PBMC dataset. The project was developed to build practical single-cell analysis skills starting from a transcriptomics and functional genomics background.
+This repository presents an end-to-end single-cell RNA-seq (scRNA-seq) analysis workflow using the Seurat package in R. The analysis was performed on a PBMC dataset to identify immune cell populations, characterize marker genes, and interpret biological functions through enrichment analysis.
 
 ## Project overview
 
-The workflow includes:
+This workflow includes:
 
 - Quality control and filtering
-- Normalization and identification of variable features
+- Normalization and scaling
 - PCA and dimensionality reduction
 - Clustering and UMAP visualization
-- Cell type annotation using canonical marker genes
-- Differential expression analysis between T cells and monocytes
-- Functional enrichment analysis of marker genes using Enrichr
+- Cell type annotation using canonical markers
+- Differential expression analysis (T cells vs Monocytes)
+- Functional enrichment analysis (GO Biological Process)
 
-## Dataset
+## Results
 
-- PBMC single-cell RNA-seq dataset
-- Processed in Seurat using a lightweight workflow suitable for a low-resource laptop
+### UMAP clustering
+![UMAP](umap.png)
 
-## Main analysis steps
+### Marker gene expression
+![Feature plot](featureplot.png)
 
-1. Loaded and inspected the Seurat object  
-2. Calculated mitochondrial percentage and performed QC filtering  
-3. Normalized expression data  
-4. Selected highly variable genes  
-5. Performed PCA  
-6. Built nearest-neighbor graph and clusters  
-7. Generated UMAP visualization  
-8. Identified marker genes for major immune cell populations  
-9. Removed ambiguous low-confidence rare cluster  
-10. Compared T cells vs monocytes using differential expression  
-11. Interpreted enriched biological processes using Enrichr  
+### Heatmap of selected marker genes
+![Heatmap](heatmap.png)
 
-## Major cell populations identified
+### Functional enrichment (T cells)
+![T cell enrichment](tcell_enrichment_GO.png)
 
-- T cells
-- Monocytes
-- Platelets
-- B cells
-- NK cells
+### Functional enrichment (Monocytes)
+![Monocyte enrichment](monocyte_enrichment_GO.png)
 
-## Key results
+## Key biological insights
 
-### Cell type annotation
-Canonical marker genes supported cluster identities:
-
-- **T cells**: CD3D, CD2, CCR7
-- **Monocytes**: LYZ, S100A8, CD14
-- **NK cells**: GNLY
-- **B cells**: MS4A1
-- **Platelets**: PPBP
-
-### Differential expression
-Differential expression analysis between T cells and monocytes identified strong lineage-specific markers:
-
-- **T cell-enriched genes**: IL32, CD2, LAT, CD3D, CD27, CCR7
-- **Monocyte-enriched genes**: TYROBP, S100A8, S100A9, LYZ, FCN1, CD14
-
-### Functional enrichment
-Functional interpretation of differential expression results showed:
-
-- **T cells**: T cell activation, positive regulation of T cell activation, lymphocyte differentiation, cytokine production
-- **Monocytes**: Toll-like receptor signaling pathway, pattern recognition receptor signaling, leukocyte chemotaxis, innate immune response
-
-## Files in this repository
-
-- `scRNA_pipeline.R` — main Seurat workflow script
-- `umap.png` — UMAP visualization of clustered cell populations
-- `featureplot.png` — marker gene expression visualization
-- `heatmap.png` — heatmap of selected marker genes
-- enrichment plots for T cells and monocytes
+- **T cells** show high expression of canonical markers such as *CD3D*, *CD2*, and *CCR7*
+- **Monocytes** are enriched for *LYZ*, *S100A8*, and *CD14*
+- Differential expression confirms strong lineage-specific gene signatures
+- Functional enrichment highlights:
+  - **T cells** → T cell activation, cytokine signaling, lymphocyte differentiation
+  - **Monocytes** → Toll-like receptor signaling, innate immune response, leukocyte chemotaxis
 
 ## Tools used
 
 - R
 - Seurat
 - dplyr
-- tibble
 - Enrichr
 
-## Learning goal
+## Repository contents
 
-This project was developed as a structured transition from bulk RNA-seq and functional genomics into single-cell transcriptomics analysis, with emphasis on biological interpretation, clean workflow design, and reproducible visualization.
+- `analysis.R` — main Seurat workflow script
+- `umap.png` — UMAP visualization of cell clusters
+- `featureplot.png` — marker gene expression visualization
+- `heatmap.png` — heatmap of selected genes
+- `tcell_enrichment_GO.png` — enrichment results for T cells
+- `monocyte_enrichment_GO.png` — enrichment results for monocytes
+
+## Objective
+
+This project was developed as a transition from bulk RNA-seq and functional genomics to single-cell transcriptomics, with emphasis on biological interpretation, reproducible analysis, and clear data visualization.
