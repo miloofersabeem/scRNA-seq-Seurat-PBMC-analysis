@@ -6,7 +6,7 @@ The analysis demonstrates clear separation of major immune cell types and highli
 
 ## Project overview
 
-This workflow includes:
+This workflow includes: 
 
 - Quality control and filtering
 - Normalization and scaling
@@ -58,6 +58,14 @@ This workflow includes:
 - `tcell_enrichment_GO.png` — enrichment results for T cells
 - `monocyte_enrichment_GO.png` — enrichment results for monocytes
 
+## How to Run
+
+R
+source("analysis.R")
+
 ## Objective
 
 This project was developed as a transition from bulk RNA-seq and functional genomics to single-cell transcriptomics, with emphasis on biological interpretation, reproducible analysis, and clear data visualization.
+
+
+
